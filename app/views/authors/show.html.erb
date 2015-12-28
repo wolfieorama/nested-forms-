@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @author.name %>
+</p>
+
+<h4>List of books </h4>
+
+<% if @author.books.present? %>
+  <% @author.books.each do |book| %>
+    <p><%= link_to book.title, book %></P>
+  <% end %>
+<% else %>
+  <h5>No Books for <%= @author.name %></h5>
+<% end %>
+
+<%= link_to 'Edit', edit_author_path(@author) %> |
+<%= link_to 'Back', authors_path %>
