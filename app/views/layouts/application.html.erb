@@ -7,9 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <ul>
-    <li><a href="http://localhost:3000/pages/aboutus"><em>about us</em></li>
-  </ul>
+  <nav class="nav navbar navbar-default">
+    <div class="container">
+        <% if user_signed_in? %>
+        <nav class="navbar-brand"><%= link_to "Agents Portal" %></nav>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to current_user.email %></li>
+          <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+        </ul>
+        <% else %>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Sign up",  new_user_registration_path %></li>
+          <li><%= link_to "Sign in",  new_user_session_path %></li>
+        </ul>
+      <% end %>
+    </div>
+  </nav>
+
 
 <%= yield %>
 
