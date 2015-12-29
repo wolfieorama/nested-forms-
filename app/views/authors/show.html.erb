@@ -15,6 +15,6 @@
   <h5>No Books for <%= @author.name %></h5>
 <% end %>
 <% if current_user.admin? %>
-<%= link_to 'Edit', edit_author_path(@author) %>
+  <%= link_to 'Edit', edit_author_path(@author) %>
 <% end %>
 <%= link_to 'Back', authors_path %>
