@@ -1,5 +1,5 @@
 class AuthorsController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource :except => [:index, :show, :new, :create]
   before_action :authenticate_user!
   before_action :set_author, only: [:show, :edit, :update, :destroy]
 
