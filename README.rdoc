@@ -1,3 +1,5 @@
 == README
 
-Manual nesting of forms and implementing authentication and authorization.
+Manual nesting of forms and implementing authentication and authorization. 
+
+and STI
